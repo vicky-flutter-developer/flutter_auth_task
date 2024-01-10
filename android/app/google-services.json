@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "739915181729",
+    "firebase_url": "https://flutterauthtask-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutterauthtask",
+    "storage_bucket": "flutterauthtask.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739915181729:android:40a02115b94f004ab7cae0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_auth_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIL8-ZV6i6FI9ND5gl0StEiaw8iQ6bcss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
