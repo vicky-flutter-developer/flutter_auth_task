@@ -1,6 +1,8 @@
 import 'package:flutter_auth_task/screens/signup_screen/binding/signup_screen_binding.dart';
 import 'package:flutter_auth_task/screens/signup_screen/view/signup_screen_view.dart';
 import 'package:get/get.dart';
+import '../screens/home_screen/binding/home_screen_binding.dart';
+import '../screens/home_screen/view/home_screen_view.dart';
 import '../screens/sign_in_screen/binding/sign_in_screen_binding.dart';
 import '../screens/sign_in_screen/view/sign_in_screen_view.dart';
 import '../screens/splash_screen/binding/splash_screen_binding.dart';
@@ -28,5 +30,11 @@ class AppPages {
       page: () => const SignInScreenView(),
       binding: SignInScreenBinding(),
     ),
+    GetPage(
+        name: _Paths.homeScreen,
+        page: () => const HomeScreenView(),
+        binding: HomeScreenBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 400)),
   ];
 }

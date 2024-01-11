@@ -12,7 +12,10 @@ class CustomTextFormField extends StatelessWidget {
       required this.keyboardType,
       required this.caption,
       this.inputFormatters,
-      required this.hintText});
+      required this.hintText,
+      this.isObscureText,
+      this.isSuffixIcon,
+      this.onSuffixIconPressed});
 
   final FormFieldValidator<String>? validator;
   final TextEditingController controller;
@@ -20,6 +23,9 @@ class CustomTextFormField extends StatelessWidget {
   final String caption;
   final TextInputType keyboardType;
   final List<TextInputFormatter>? inputFormatters;
+  final bool? isObscureText;
+  final bool? isSuffixIcon;
+  final VoidCallback? onSuffixIconPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +41,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           keyboardType: keyboardType,
           inputFormatters: inputFormatters,
+          obscureText: isObscureText ?? false,
           style: AppTextStyles.semiBold16,
           decoration: InputDecoration(
             hintText: hintText,
@@ -46,6 +53,17 @@ class CustomTextFormField extends StatelessWidget {
             focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AppColors.textFieldColor, width: 1),
             ),
+            suffixIcon: isSuffixIcon ?? false
+                ? IconButton(
+                    onPressed: onSuffixIconPressed,
+                    icon: Icon(
+                      isObscureText ?? false
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                      color: AppColors.blackColor,
+                    ),
+                  )
+                : null,
           ),
         ),
       ],
