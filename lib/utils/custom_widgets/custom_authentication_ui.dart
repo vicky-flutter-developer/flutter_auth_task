@@ -127,7 +127,9 @@ class CustomAuthenticationUi extends StatelessWidget {
                         duration: const Duration(milliseconds: 400),
                         child: RichText(
                           text: TextSpan(
-                            text: 'Don’t have an account?  ',
+                            text: isSignIn ?? false
+                                ? 'Don’t have an account?  '
+                                : 'Already have an account?  ',
                             style: AppTextStyles.regular16
                                 .copyWith(color: const Color(0xff666666)),
                             children: <TextSpan>[
