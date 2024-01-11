@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="flutter_auth_task"
+        android:label="Flutter Auth"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

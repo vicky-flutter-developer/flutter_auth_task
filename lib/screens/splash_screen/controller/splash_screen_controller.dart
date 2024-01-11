@@ -5,7 +5,9 @@ import '../../../utils/shared_preferences/shared_preferences.dart';
 class SplashScreenController extends GetxController {
   @override
   void onInit() {
-    getLoggedInStatus();
+    Future.delayed(const Duration(seconds: 1), () {
+      getLoggedInStatus();
+    });
     super.onInit();
   }
 

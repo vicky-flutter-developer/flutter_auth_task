@@ -23,7 +23,25 @@ class HomeScreenView extends GetView<HomeScreenController> {
           actions: [
             IconButton(
                 onPressed: () {
-                  controller.onLogoutClicked();
+                  showDialog<bool>(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog.adaptive(
+                        title: Text('Alert'),
+                        content: Text('Are you want to exit the app ?'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Get.back(),
+                            child: Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () => controller.onLogoutClicked(),
+                            child: Text('OK'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
                 icon: const Icon(
                   Icons.logout,
