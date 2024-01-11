@@ -3,7 +3,6 @@ import 'package:flutter_auth_task/screens/home_screen/controller/home_screen_con
 import 'package:flutter_auth_task/utils/app_colors/app_colors.dart';
 import 'package:flutter_auth_task/utils/custom_widgets/custom_loader.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/app_text_styles/app_text_styles.dart';
 
 class HomeScreenView extends GetView<HomeScreenController> {
@@ -27,16 +26,16 @@ class HomeScreenView extends GetView<HomeScreenController> {
                     context: context,
                     builder: (context) {
                       return AlertDialog.adaptive(
-                        title: Text('Alert'),
-                        content: Text('Are you want to exit the app ?'),
+                        title: const Text('Alert'),
+                        content: const Text('Are you want to exit the app ?'),
                         actions: [
                           TextButton(
                             onPressed: () => Get.back(),
-                            child: Text('Cancel'),
+                            child: const Text('Cancel'),
                           ),
                           TextButton(
                             onPressed: () => controller.onLogoutClicked(),
-                            child: Text('OK'),
+                            child: const Text('OK'),
                           ),
                         ],
                       );
@@ -79,21 +78,28 @@ class HomeScreenView extends GetView<HomeScreenController> {
                             )
                           : Column(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          controller.profileUrl.value),
-                                      fit: BoxFit.cover,
+                                Card(
+                                  elevation: 5,
+                                  shadowColor: AppColors.blackColor,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                      // shape: BoxShape.circle,
+                                      borderRadius: BorderRadius.circular(20),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                            controller.profileUrl.value),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 25),
+                                const SizedBox(height: 30),
                                 customRow(
                                     title: "User email",
                                     value: controller.emailId.value),
